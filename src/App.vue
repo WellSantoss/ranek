@@ -63,6 +63,7 @@ img {
   display: block;
   padding: 10px 30px;
   background: #87f;
+  border: none;
   border-radius: 4px;
   color: #fff;
   text-align: center;
