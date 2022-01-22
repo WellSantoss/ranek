@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header />
-
     <main id="main">
-      <router-view />
+      <transition mode="out-in">
+        <router-view />
+      </transition>
     </main>
-
     <Footer />
   </div>
 </template>
@@ -77,6 +77,10 @@ img {
 .btn:hover {
   background: #65d;
   transform: scale(1.1);
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 input,
