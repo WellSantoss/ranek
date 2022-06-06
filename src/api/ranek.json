@@ -21,6 +21,18 @@
       "numero": "321",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "wellington1998santoss@gmail.com",
+      "nome": "Wellington Santos",
+      "email": "wellington1998santoss@gmail.com",
+      "senha": "12345",
+      "cep": "16203617",
+      "rua": "Rua Paulo Garcia Peres",
+      "numero": "572",
+      "bairro": "Jandaia II Residencial Parque",
+      "cidade": "Birigüi",
+      "estado": "SP"
     }
   ],
   "produto": [
