@@ -25,7 +25,28 @@
 </template>
 
 <script>
-export default {};
+import { mapFields } from "@/helpers.js";
+
+export default {
+  computed: {
+    ...mapFields({
+      fields: [
+        "id",
+        "nome",
+        "email",
+        "senha",
+        "cep",
+        "rua",
+        "numero",
+        "bairro",
+        "cidade",
+        "estado",
+      ],
+      base: "usuario",
+      mutation: "UPDATE_USUARIO",
+    }),
+  },
+};
 </script>
 
 <style scoped>
