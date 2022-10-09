@@ -1,6 +1,6 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { api } from "@/services.js";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { api } from '@/services.js';
 
 Vue.use(Vuex);
 
@@ -8,16 +8,16 @@ export default new Vuex.Store({
   state: {
     login: false,
     usuario: {
-      id: "",
-      nome: "",
-      email: "",
-      senha: "",
-      cep: "",
-      rua: "",
-      numero: "",
-      bairro: "",
-      cidade: "",
-      estado: "",
+      id: '',
+      nome: '',
+      email: '',
+      senha: '',
+      cep: '',
+      rua: '',
+      numero: '',
+      bairro: '',
+      cidade: '',
+      estado: '',
     },
   },
   mutations: {
@@ -31,13 +31,29 @@ export default new Vuex.Store({
   actions: {
     getUsuario(context, payload) {
       return api.get(`/usuario/${payload}`).then((r) => {
-        context.commit("UPDATE_USUARIO", r.data);
-        context.commit("UPDADE_LOGIN", true);
+        context.commit('UPDATE_USUARIO', r.data);
+        context.commit('UPDADE_LOGIN', true);
       });
     },
     criarUsuario(context, payload) {
-      context.commit("UPDATE_USUARIO", { id: payload.email });
+      context.commit('UPDATE_USUARIO', { id: payload.email });
       return api.post(`/usuario`, payload);
+    },
+    deslogarUsuario(context) {
+      context.commit('UPDATE_USUARIO', {
+        id: '',
+        nome: '',
+        email: '',
+        senha: '',
+        cep: '',
+        rua: '',
+        numero: '',
+        bairro: '',
+        cidade: '',
+        estado: '',
+      });
+
+      context.commit('UPDADE_LOGIN', false);
     },
   },
 });
