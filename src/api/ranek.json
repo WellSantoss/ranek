@@ -1,4 +1,50 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "wellington1998santoss@gmail.com",
+      "vendedor_id": "wellington1998santoss@gmail.com",
+      "produto": {
+        "id": "-tfy7Ce",
+        "nome": "Poco X3 NFC",
+        "usuario_id": "wellington1998santoss@gmail.com",
+        "preco": "1299",
+        "vendido": "false",
+        "descricao": "Bom estado",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "16203617",
+        "rua": "Rua Paulo Garcia Peres",
+        "numero": "572",
+        "cidade": "Birigüi",
+        "bairro": "Jandaia II Residencial Parque",
+        "estado": "SP"
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "wellington@globalwebsites.com.br",
+      "vendedor_id": "wellington1998santoss@gmail.com",
+      "produto": {
+        "id": "smartphone",
+        "nome": "Smartphone",
+        "usuario_id": "wellington1998santoss@gmail.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "16203617",
+        "rua": "Rua Paulo Garcia Peres",
+        "numero": "572",
+        "cidade": "Birigüi",
+        "bairro": "Jandaia II Residencial Parque",
+        "estado": "SP"
+      },
+      "id": 2
+    }
+  ],
   "usuario": [
     {
       "id": "maria@gmail.com",
@@ -27,6 +73,18 @@
       "nome": "Wellington Santos",
       "email": "wellington1998santoss@gmail.com",
       "senha": "12345",
+      "cep": "16203617",
+      "rua": "Rua Paulo Garcia Peres",
+      "numero": "572",
+      "bairro": "Jandaia II Residencial Parque",
+      "cidade": "Birigüi",
+      "estado": "SP"
+    },
+    {
+      "id": "wellington@globalwebsites.com.br",
+      "nome": "Wellington",
+      "email": "wellington@globalwebsites.com.br",
+      "senha": "123",
       "cep": "16203617",
       "rua": "Rua Paulo Garcia Peres",
       "numero": "572",
@@ -109,12 +167,13 @@
       "fotos": null
     },
     {
+      "id": "-tfy7Ce",
       "nome": "Poco X3 NFC",
-      "preco": "1299",
-      "descricao": "Bom estado",
-      "fotos": null,
       "usuario_id": "wellington1998santoss@gmail.com",
-      "id": "-tfy7Ce"
+      "preco": "1299",
+      "vendido": "false",
+      "descricao": "Bom estado",
+      "fotos": null
     }
   ]
 }

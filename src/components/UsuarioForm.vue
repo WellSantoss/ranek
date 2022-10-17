@@ -1,11 +1,13 @@
 <template>
   <form>
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" v-model="nome" />
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" v-model="email" />
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" v-model="senha" />
+    <div class="usuario" v-if="mostrarDadosLogin">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" v-model="nome" />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" v-model="email" />
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha" v-model="senha" />
+    </div>
     <label for="cep">CEP</label>
     <input
       type="text"
@@ -31,13 +33,13 @@
 </template>
 
 <script>
-import { mapFields } from "@/helpers.js";
-import { getCep } from "@/services.js";
+import { mapFields } from '@/helpers.js';
+import { getCep } from '@/services.js';
 
 export default {
   methods: {
     preencherCep() {
-      const cep = this.cep.replace(/\D/g, "");
+      const cep = this.cep.replace(/\D/g, '');
 
       if (cep.length == 8) {
         getCep(cep).then((response) => {
@@ -52,29 +54,37 @@ export default {
   computed: {
     ...mapFields({
       fields: [
-        "id",
-        "nome",
-        "email",
-        "senha",
-        "cep",
-        "rua",
-        "numero",
-        "bairro",
-        "cidade",
-        "estado",
+        'id',
+        'nome',
+        'email',
+        'senha',
+        'cep',
+        'rua',
+        'numero',
+        'bairro',
+        'cidade',
+        'estado',
       ],
-      base: "usuario",
-      mutation: "UPDATE_USUARIO",
+      base: 'usuario',
+      mutation: 'UPDATE_USUARIO',
     }),
+    mostrarDadosLogin() {
+      return !this.$store.state.login || this.$route.name === 'usuario-editar';
+    },
   },
 };
 </script>
 
 <style scoped>
-form {
+form,
+.usuario {
   display: grid;
   grid-template-columns: 80px 1fr;
   align-items: center;
+}
+
+.usuario {
+  grid-column: 1 / 3;
 }
 
 .button {
